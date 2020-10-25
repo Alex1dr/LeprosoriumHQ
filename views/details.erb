@@ -1,0 +1,31 @@
+<h2>Post details:</h2>
+<p>
+  <%= @post.name %>
+  <br/>
+  <%= @post.content %>
+  <br/>
+
+
+</p>
+<h2>Comments:</h2>
+
+<% @comments.each do |comment| %>
+  <p>
+    <%= comment.name %>
+    <br/>
+    <%= comment.content %>
+    <br/>
+
+  <hr/>
+  </p>
+<% end %>
+
+<p>
+<form action="/details/<%= @post.id %>" method="POST" role="form">
+  <textarea name = comment[name] class ="form-control" rows="1" placeholder="Type name here"></textarea>
+  <br/>
+  <textarea name = comment[content] class ="form-control" rows="10" placeholder="Type comments text here"></textarea>
+  <br/>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</p>

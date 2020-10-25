@@ -1,0 +1,8 @@
+<h2>Список постов из базы данных:</h2>
+<br/>
+<hr>
+<% @posts.each do |post|%>
+  <p>
+    <a href="/details/<%= post.id%>"><%= post.name %></a>
+  </p>
+<% end %>
