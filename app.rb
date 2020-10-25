@@ -16,17 +16,15 @@ class Comment < ActiveRecord::Base
 end
 
 before do
-	@posts = Post.all
-
-
 end
 
 get '/' do
-	erb :index
+	@posts = Post.all
+  erb :index
 end
 
 get '/new' do
-	@p = Post.new
+  @p = Post.new
 	erb :new
 end
 
